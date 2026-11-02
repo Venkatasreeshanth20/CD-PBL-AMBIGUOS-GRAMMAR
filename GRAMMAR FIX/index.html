@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrammarFix – Dangling-Else Resolver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GrammarFix – Dangling-Else Resolver</h1>
+            <p class="subtitle">Interactive tool to detect and resolve dangling-else ambiguity in nested if-else statements (Compiler Design Hackathon 2026, PS-04)</p>
+        </header>
+        <main>
+            <section class="input-section">
+                <label for="code-editor">Enter your nested if-else code:</label>
+                <textarea id="code-editor" rows="8" placeholder="Type your code here..."></textarea>
+                <div class="test-cases">
+                    <label>Predefined Test Cases:</label>
+                    <select id="test-cases">
+                        <option value="">-- Select a test case --</option>
+                    </select>
+                    <button id="load-test">Load</button>
+                </div>
+                <div class="input-actions">
+                    <button id="analyze-btn">Analyze</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+                <div id="input-error" class="error-message"></div>
+            </section>
+            <section class="status-section">
+                <div id="ambiguity-status" class="status-indicator"></div>
+            </section>
+            <section class="grammar-section">
+                <div class="grammar-block">
+                    <h2>Original Ambiguous Grammar</h2>
+                    <pre id="original-grammar"></pre>
+                </div>
+                <div class="grammar-block">
+                    <h2>Transformed Grammar (Matched/Unmatched)</h2>
+                    <pre id="transformed-grammar"></pre>
+                </div>
+            </section>
+            <section class="parse-tree-section">
+                <h2>Parse Tree Visualization</h2>
+                <div id="parse-tree-container"></div>
+            </section>
+            <section class="explanation-section">
+                <h2>Step-by-Step Explanation</h2>
+                <div id="explanation"></div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2026 GrammarFix. Built for Compiler Design Hackathon PS-04.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
